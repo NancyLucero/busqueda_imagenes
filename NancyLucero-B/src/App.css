@@ -75,3 +75,24 @@ label span.top{
   background: white;
   padding: 0 3px;
 }
+
+/* contenedor imagenes */
+
+.contenedor{
+  width: 80%;
+  margin: auto;
+  margin-top: 1rem;
+}
+.grilla{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: 1rem;
+}
+
+.contenedor.grilla img{
+  width: 1005;
+  min-width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center center;
+}

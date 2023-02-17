@@ -1,9 +1,19 @@
-import { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import './App.css'
 
 function App() {
   const [valor,setValor]= useState('');
+  const [res, setRes] = useState([]);
+
+  const BuscarResultados = async ()=>{
+    const API_KEY='7mdmq8E6PgLgqdaAXeKm2EGvkwE05mu3-WyxWJb2WEM';
+    const URL =`https://api.unsplash.com/photos/?client_id=${API_KEY}&query=${valor}`;
+    const response= await fetch(URL);
+    const data= await response.json();
+    setRes(data.results);
+    console.log(data);
+  }
 
   const entradas= document.querySelectorAll('input');
   entradas.forEach( entrada =>{
@@ -27,13 +37,25 @@ function App() {
       <div>
         <label className='label'>
           <span>buscar imagenes...</span>
-          <input type="text" autoComplete='off' onChange={e => setValor(e.target.value)}/>
+          <input type="text" autoComplete='off' onChange={(e) => setValor(e.target.value)}/>
         </label>
       </div>
       <div>
-        <button type='submit'>Buscar</button>
+        <button type='submit' onClick={()=> BuscarResultados()}>Buscar</button>
       </div>
       </form>
+
+      <div className='container'>
+          <div className='grilla'>
+          {
+            res.map((elemento,indice) =>{
+              return(
+                <img key={indice} src={elemento.urls.regular} alt="" />
+              )                          
+          })          
+        }
+        </div>
+      </div>
     </div>
   )
 }
