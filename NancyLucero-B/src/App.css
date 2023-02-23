@@ -1,9 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
+html{
+  scroll-behavior: smooth;
+}
 .principal{
   display: flex;
 }
 
+@media (max-width:800px){
+  bottom{
+      display: none;
+  }
+}
 /* reposo */
 
 div{
@@ -78,21 +86,26 @@ label span.top{
 
 /* contenedor imagenes */
 
-.contenedor{
-  width: 80%;
-  margin: auto;
-  margin-top: 1rem;
-}
-.grilla{
-  display: grid;
-  grid-template-columns: repeat(5,1fr);
-  gap: 1rem;
+img{
+  border-style: solid;
+  border-color:  #6C2A71;
+  border-radius: 5px;
 }
 
-.contenedor.grilla img{
-  width: 1005;
-  min-width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  object-position: center center;
+img:hover{
+  box-shadow: 5px 10px 20px 1px rgba(255,255,255, 0.273) !important;
+  transition: all 0.7s linear;
+  opacity: 0.6;
+}
+
+.ocultar{
+  display: none;
+}
+
+.fondo{
+  background: none;
+}
+
+.margen{
+  padding: 1rem 1rem !important;
 }

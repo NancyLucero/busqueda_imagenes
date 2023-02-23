@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import	axios from 'axios'
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import './App.css'
 
@@ -29,6 +30,8 @@ const App = () =>{
     console.log(data);
   }*/
 
+  const estilocard = "with: 18rem;";
+
   const entradas= document.querySelectorAll('input');
   entradas.forEach( entrada =>{
     entrada.onfocus = ( )=>{
@@ -47,28 +50,47 @@ const App = () =>{
 
   return (
     <div className="container">
-      <form action="" className='principal'>
+      <form action="" className=''>
       <div>
         <label className='label'>
           <span>buscar imagenes...</span>
           <input type="text" autoComplete='off' onChange={(e) => setInputvalor(e.target.value)}/>
         </label>
       </div>
-      <div>
+      {/*<div>
         <button type='submit' onClick={()=> BuscarResultados()}>Buscar</button>
-      </div>
+  </div>*/}
       </form>
-
-      <div className='container'>
-          <div className='grilla'>
+   
+      <div className='container fondo'>
+          <div className='card' style={{estilocard}}>
+          <div className='row'>
+          
           {imagenes.map(imagen=>(
-              <div key={imagen.id}>            
-                <img src={imagen.urls.regular} alt="" />
+              <> 
+              <div className='col-md-4'>            
+              <img key={imagen.id} className='card-img-top' src={imagen.urls.small_s3} alt={imagen.likes} />                
+              <div className='card-body margen'>
+                  <h4 className='card-title'>{imagen.alt_description}</h4>
+                  <p className='card-text text-secondary'>
+                    {
+                      imagen.description
+                      ?
+                      imagen.description
+                      :
+                      "not description"
+                    }
+                  </p>
+                  <p className='card-text text-danger'>Likes: {imagen.likes}</p>
+                {/*   <a href="#" class="btn btn-primary">See Profile</a>  */}             
+              </div>    
               </div>
+              </>          
             ))
-          }
+          }         
           </div>
-      </div>
+          </div>
+      </div>        
     </div>
   )
   }
