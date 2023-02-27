@@ -17,6 +17,10 @@ https://www.npmjs.com/
 (Proyectos modelos)
 
 https://morioh.com/p/7eb84934f64c
-
 https://youtu.be/kTe1XZfYq9M
+https://youtu.be/uFuOPlOk0sQ
+https://youtu.be/ahpbfQybX94
+https://youtu.be/nOLYaq7gaOE
+https://youtu.be/31icbDtaO-k
+https://youtu.be/yUau8xImmK0
 
