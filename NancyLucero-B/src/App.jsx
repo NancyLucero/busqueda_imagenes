@@ -11,23 +11,25 @@ const App = () =>{
   const [page, setPage] = useState(0);
 
   const API_KEY='7mdmq8E6PgLgqdaAXeKm2EGvkwE05mu3-WyxWJb2WEM';
+  const SECRET_KEY='7pZUlXRC0pqurKCi5HftVBVFVlOT4fQF5cCcnPvf7e4'
   /*const URL =`https://api.unsplash.com/search/photos?page=1&per_page=20&query=${inputvalor}&client_id=${API_KEY}`;  */
 
   
 
   const BuscarImagenes = async(nropage,busqueda)=>{
-    const URL =`https://api.unsplash.com/search/photos?page=${nropage}&per_page=20&query=${busqueda}&client_id=${API_KEY}`;
-    const response = await axios.get(URL)
-    setImagenes(response.data.results)
-    let aux = imagenes.concat(response.data.results)
-    setImagenes(aux)
-  }
+      const URL =`https://api.unsplash.com/search/photos?page=${nropage}&per_page=20&query=${busqueda}&client_id=${API_KEY}`;
+      const response = await axios.get(URL)
+      setImagenes(response.data.results)
+      /*let aux = imagenes.concat(response.data.results)
+      setImagenes(aux)*/
+   }
   
   useEffect(()=>{
-      setTimeout(()=>{
+     /* setTimeout(()=>{
         BuscarImagenes(page+1,inputvalor)
-      },100)
-  },[])
+      },100)*/   
+      BuscarImagenes(page+1,inputvalor)
+  },[page+1,inputvalor])
 
  /*
   const BuscarResultados = async ()=>{
@@ -92,8 +94,10 @@ const App = () =>{
                     {
                       imagen.height<5000
                       ?
-                      <div className='col-md-4'>            
-                        <img key={imagen.id} className='card-img-top' src={imagen.urls.small_s3} alt={imagen.likes} />                
+                      <div className='col-md-4'>      
+                           
+                        <img key={imagen.id} className='card-img-top' src={imagen.urls.small_s3} alt="" />                
+                       
                           <div className='card-body margen'>
                               <h4 className='card-title'>{imagen.alt_description}</h4>
                               <p className='card-text text-secondary'>

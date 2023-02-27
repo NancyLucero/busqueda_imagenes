@@ -92,11 +92,21 @@ img{
   border-radius: 5px;
 }
 
-img:hover{
+/*img:hover{
   box-shadow: 5px 10px 20px 1px rgba(255,255,255, 0.273) !important;
   transition: all 0.7s linear;
   opacity: 0.6;
+}*/
+
+.card-img-top{
+  transition: all 0.7s ease-out;
 }
+.card-img-top:hover{
+  transform: scale(1.01);
+  opacity: 0.6;
+}
+
+/* posibles css*/
 
 .ocultar{
   display: none;
