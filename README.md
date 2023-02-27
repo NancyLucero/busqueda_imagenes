@@ -3,7 +3,7 @@
 
 Proyecto Laboratorio en React (Vite) para aprender manejo de Hook, consumir API's y componente Scroll Infinito.  
 
-(https://ferozo.host/hosting/filemanager/item/download?mode=download&preview=true&path=%2Fpublic_html%2Fdiplomatura%2FImagen_Proyecto_B.png)
+https://lavbsalta.org.ar/publico/diplomatura/Imagen_Proyecto_B.png
 
 ## Enlaces de Interes e Informacion
 
