@@ -1,9 +1,9 @@
 
-# Busqueda de Imagenes mediante API de Unsplash 
+# Busqueda de Imagenes mediante API de Unsplash
 
 Proyecto Laboratorio en React (Vite) para aprender manejo de Hook, consumir API's y componente Scroll Infinito.  
 
-https://lavbsalta.org.ar/publico/diplomatura/Imagen_Proyecto_B.png
+(https://lavbsalta.org.ar/publico/diplomatura/Imagen_Proyecto_B.png)
 
 ## Enlaces de Interes e Informacion
 
